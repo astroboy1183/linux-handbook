@@ -5,7 +5,7 @@ expert level. It assumes no prior Linux knowledge. It's written for beginners,
 such as developers and data engineers, who want to truly master Linux, not
 just get by.
 
-📖 **Read it online:** <https://astroboy1183.github.io/linux-handbook/>
+📖 **Read it online:** <https://jayanthappalla.com/linux-handbook/>
 
 The handbook has three goals, and every chapter serves at least one of them:
 
