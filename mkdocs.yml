@@ -1,0 +1,197 @@
+site_name: The Linux Handbook
+site_description: A hands-on guide to Linux, from your first command to building containers from scratch.
+site_url: https://astroboy1183.github.io/linux-handbook/
+repo_url: https://github.com/astroboy1183/linux-handbook
+repo_name: astroboy1183/linux-handbook
+edit_uri: edit/main/docs/
+copyright: Written for learners. Practice in a VM, break things, and learn from it.
+
+theme:
+  name: material
+  language: en
+  icon:
+    logo: material/penguin
+    repo: fontawesome/brands/github
+  favicon: assets/favicon.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - navigation.tracking
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.action.edit
+
+plugins:
+  - search
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.snippets
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_css:
+  - assets/extra.css
+
+nav:
+  - Home: index.md
+  - Start Here:
+      - How to use this handbook: start-here.md
+      - The full roadmap: roadmap.md
+      - Set up your practice lab: lab-setup.md
+      - Progress checklist: progress.md
+  - Beginner:
+      - tiers/beginner.md
+      - "Level 0: First Steps":
+          - chapters/00-first-steps/index.md
+          - What is Linux?: chapters/00-first-steps/01-what-is-linux.md
+          - The terminal, shell, and prompt: chapters/00-first-steps/02-terminal-shell-prompt.md
+          - Your first commands: chapters/00-first-steps/03-first-commands.md
+          - Getting help: chapters/00-first-steps/04-getting-help.md
+          - The filesystem layout: chapters/00-first-steps/05-filesystem-layout.md
+          - Users, groups, and sudo: chapters/00-first-steps/06-users-groups-sudo.md
+          - "Capstone": exercises/level-0-capstone.md
+      - "Level 1: Command Line":
+          - chapters/01-command-line/index.md
+          - Working with files: chapters/01-command-line/01-working-with-files.md
+          - Globbing and expansion: chapters/01-command-line/02-globbing-and-expansion.md
+          - Permissions: chapters/01-command-line/03-permissions.md
+          - Pipes and redirection: chapters/01-command-line/04-pipes-and-redirection.md
+          - Text processing: chapters/01-command-line/05-text-processing.md
+          - Finding files: chapters/01-command-line/06-finding-files.md
+          - Shell productivity: chapters/01-command-line/07-shell-productivity.md
+          - Archives and compression: chapters/01-command-line/08-archives-and-compression.md
+          - Vim essentials: chapters/01-command-line/09-vim-essentials.md
+          - tmux: chapters/01-command-line/10-tmux.md
+          - "Capstone": exercises/level-1-capstone.md
+      - "Level 2: Scripting":
+          - chapters/02-scripting/index.md
+          - Your first script: chapters/02-scripting/01-first-script.md
+          - Variables, quoting, and arrays: chapters/02-scripting/02-variables-quoting-arrays.md
+          - Conditionals, loops, and functions: chapters/02-scripting/03-control-flow-functions.md
+          - Error handling: chapters/02-scripting/04-error-handling.md
+          - Arguments and getopts: chapters/02-scripting/05-arguments-getopts.md
+          - Bash or Python?: chapters/02-scripting/06-bash-vs-python.md
+          - "Capstone": exercises/level-2-capstone.md
+  - Intermediate:
+      - tiers/intermediate.md
+      - "Level 3: How Linux Works":
+          - chapters/03-internals/index.md
+          - The boot process: chapters/03-internals/01-boot-process.md
+          - Processes and signals: chapters/03-internals/02-processes-and-signals.md
+          - Memory: chapters/03-internals/03-memory.md
+          - Filesystems, inodes, and links: chapters/03-internals/04-filesystems-and-links.md
+          - Devices, /proc, and /sys: chapters/03-internals/05-devices-proc-sys.md
+          - Installing software: chapters/03-internals/06-installing-software.md
+          - "Capstone": exercises/level-3-capstone.md
+      - "Level 4: System Administration":
+          - chapters/04-sysadmin/index.md
+          - systemd and journalctl: chapters/04-sysadmin/01-systemd-and-journalctl.md
+          - Scheduling tasks: chapters/04-sysadmin/02-scheduling.md
+          - Networking basics: chapters/04-sysadmin/03-networking-basics.md
+          - Firewalls with ufw: chapters/04-sysadmin/04-firewall-ufw.md
+          - SSH: chapters/04-sysadmin/05-ssh.md
+          - Disks and backups: chapters/04-sysadmin/06-disks-and-backups.md
+          - Troubleshooting: chapters/04-sysadmin/07-troubleshooting.md
+          - User management and PAM: chapters/04-sysadmin/08-user-management.md
+          - Logging and logrotate: chapters/04-sysadmin/09-logging-and-logrotate.md
+          - LVM and RAID: chapters/04-sysadmin/10-lvm-and-raid.md
+          - Web servers and TLS: chapters/04-sysadmin/11-web-servers-and-tls.md
+          - "Capstone": exercises/level-4-capstone.md
+  - Expert:
+      - tiers/expert.md
+      - "Level 5: Building for Linux":
+          - chapters/05-programming/index.md
+          - System calls and strace: chapters/05-programming/01-system-calls-strace.md
+          - File descriptors in code: chapters/05-programming/02-file-descriptors.md
+          - Processes and signals in code: chapters/05-programming/03-processes-signals-in-code.md
+          - Pipes and sockets: chapters/05-programming/04-pipes-and-sockets.md
+          - Your program as a service: chapters/05-programming/05-services-with-systemd.md
+          - Building software: chapters/05-programming/06-building-software.md
+          - Debugging: chapters/05-programming/07-debugging.md
+          - "Capstone": exercises/level-5-capstone.md
+      - "Level 6: Expert Topics":
+          - chapters/06-expert/index.md
+          - Containers from scratch: chapters/06-expert/01-containers-from-scratch.md
+          - Performance analysis: chapters/06-expert/02-performance-analysis.md
+          - Security: chapters/06-expert/03-security.md
+          - Kernel basics: chapters/06-expert/04-kernel-basics.md
+          - Advanced networking: chapters/06-expert/05-advanced-networking.md
+          - Virtualization: chapters/06-expert/06-virtualization.md
+          - Docker and Podman: chapters/06-expert/07-docker-and-podman.md
+          - Automation with Ansible: chapters/06-expert/08-automation-ansible.md
+          - "Capstone": exercises/level-6-capstone.md
+  - Capstones:
+      - exercises/index.md
+      - Solutions:
+          - "Level 0": exercises/solutions/level-0-capstone.md
+          - "Level 1": exercises/solutions/level-1-capstone.md
+          - "Level 2": exercises/solutions/level-2-capstone.md
+          - "Level 3": exercises/solutions/level-3-capstone.md
+          - "Level 4": exercises/solutions/level-4-capstone.md
+          - "Level 5": exercises/solutions/level-5-capstone.md
+          - "Level 6": exercises/solutions/level-6-capstone.md
+  - Cheat Sheets:
+      - cheatsheets/index.md
+      - Navigation and files: cheatsheets/files-and-navigation.md
+      - Permissions: cheatsheets/permissions.md
+      - Text processing: cheatsheets/text-processing.md
+      - Bash scripting: cheatsheets/bash-scripting.md
+      - Processes: cheatsheets/processes.md
+      - systemd: cheatsheets/systemd.md
+      - Networking: cheatsheets/networking.md
+      - SSH: cheatsheets/ssh.md
+      - Vim and tmux: cheatsheets/vim-tmux.md
+      - Glossary: cheatsheets/glossary.md

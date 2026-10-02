@@ -1,0 +1,104 @@
+/* The Linux Handbook: small polish on top of MkDocs Material.
+   Colors come from Material's CSS variables, so both the light
+   (default) and dark (slate) schemes work without extra rules. */
+
+/* A little more room for wide tables and code. */
+.md-grid {
+  max-width: 1440px;
+}
+
+/* ---------- Home page hero ---------- */
+.lh-hero {
+  margin: 0 0 2rem;
+  padding: 2rem 1.5rem;
+  border-radius: 0.6rem;
+  background: linear-gradient(
+    135deg,
+    var(--md-primary-fg-color) 0%,
+    var(--md-primary-fg-color--dark) 100%
+  );
+  color: var(--md-primary-bg-color);
+}
+
+.lh-hero h1 {
+  margin: 0 0 0.5rem;
+  color: var(--md-primary-bg-color);
+  font-weight: 700;
+}
+
+.lh-hero p {
+  max-width: 46rem;
+  font-size: 0.95rem;
+}
+
+.lh-hero .md-button {
+  margin: 0.5rem 0.5rem 0 0;
+  color: var(--md-primary-bg-color);
+  border-color: var(--md-primary-bg-color);
+}
+
+.lh-hero .md-button--primary {
+  background-color: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
+  color: var(--md-accent-bg-color);
+}
+
+.lh-hero .md-button:hover,
+.lh-hero .md-button:focus {
+  background-color: var(--md-primary-bg-color);
+  border-color: var(--md-primary-bg-color);
+  color: var(--md-primary-fg-color);
+}
+
+/* A terminal-style one-liner inside the hero. */
+.lh-hero code {
+  background-color: rgba(0, 0, 0, 0.25);
+  color: var(--md-primary-bg-color);
+}
+
+/* ---------- "VM only" badge ---------- */
+/* Usage: <span class="vm-only">⚠️ VM only</span> */
+.vm-only {
+  display: inline-block;
+  padding: 0.05rem 0.5rem;
+  border-radius: 1rem;
+  border: 1px solid #ff1744;
+  background-color: rgba(255, 23, 68, 0.12);
+  color: var(--md-default-fg-color);
+  font-size: 0.75em;
+  font-weight: 700;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+/* ---------- Cheat sheets: keep dense tables readable ---------- */
+.md-typeset table:not([class]) {
+  font-size: 0.72rem;
+}
+
+/* Glossary (definition lists): make the terms stand out. */
+.md-typeset dl dt {
+  margin-top: 1rem;
+  font-weight: 700;
+  color: var(--md-primary-fg-color);
+}
+
+[data-md-color-scheme="slate"] .md-typeset dl dt {
+  color: var(--md-accent-fg-color);
+}
+
+/* Grid cards: a subtle lift on hover. */
+.md-typeset .grid.cards > ul > li {
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  transform: translateY(-2px);
+}
+
+/* Small screens: smaller hero padding. */
+@media screen and (max-width: 44.9375em) {
+  .lh-hero {
+    padding: 1.25rem 1rem;
+  }
+}
